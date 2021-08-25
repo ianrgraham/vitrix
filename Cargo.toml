@@ -1,0 +1,21 @@
+[package]
+name = "vitrix"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "vitrix"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+num = "0.4"
+ndarray = "0.15.3"
+ndarray-linalg = {version = "0.14.1", features = ["openblas-system"] }
+numpy = "0.14.1"
+
+[dependencies.pyo3]
+version = "0.14.2"
+features = ["extension-module"]
+
+[package.metadata.docs.rs]
+rustdoc-args = [ "--html-in-header", "./src/docs-header.html" ]
