@@ -1,1 +1,1 @@
-Softmatter simulation/analysis routines implemented in Rust.
+Molecular dynamics library in Rust.

@@ -39,6 +39,7 @@ fn nonaffine_local_strain_py(
         .map_err(|e| PyArithmeticError::new_err(format!("{}", e)))
 }
 
+
 #[pyfunction(name="affine_local_strain")]
 fn affine_local_strain_py<'py>(
         py: Python<'py>,
@@ -63,6 +64,7 @@ pub mod dynamics {
     /// Calculates the affine local strain of particles given the local
     /// configurations at two times
     /// 
+    #[inline(always)]
     pub fn affine_local_strain<T: Float + Scalar + Lapack>(
         initial_vectors: ArrayView2<T>,
         final_vectors: ArrayView2<T>)
@@ -86,6 +88,7 @@ pub mod dynamics {
     /// * $D^2_{min}$
     /// * $J$
     ///
+    #[inline(always)]
     pub fn nonaffine_and_affine_local_strain<T: Float + Scalar + Lapack>(
         initial_vectors: ArrayView2<T>,
         final_vectors: ArrayView2<T>)
@@ -113,6 +116,7 @@ pub mod dynamics {
     /// 
     /// * $D^2_{min}$
     ///
+    #[inline(always)]
     pub fn nonaffine_local_strain<T: Float + Scalar + Lapack>(
         initial_bonds: ArrayView2<T>,
         final_bonds: ArrayView2<T>)

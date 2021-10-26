@@ -5,11 +5,11 @@ edition = "2018"
 
 [lib]
 name = "vitrix"
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib", "lib"]
 
 [dependencies]
 num = "0.4"
-ndarray = "0.15.3"
+ndarray = {version = "0.15.3", features = ["rayon", "approx"]}
 ndarray-linalg = {version = "0.14.1", features = ["openblas-system"] }
 numpy = "0.14.1"
 
